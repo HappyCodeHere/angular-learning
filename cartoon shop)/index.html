@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title> Cartoon store </title>
+
+	<script src="add/bootstrap/js/jquery-2.2.0.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+
+	<script src="js/main.js"></script>
+
+	<link rel="icon" type="image/png" href="http://findicons.com/files/icons/2342/pixelophilia2/32/shop.png">
+
+
+
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container">
+			<div class="text-center">
+				<h1 id="lol"> Looking for a friend? </h1>
+				<h3> Welcome to our cartoon's pets store! </h3>
+			</div>
+		</div>
+	</div>
+
+	<div id="second">
+		<div class="row">
+			<div class="loo col-lg-offset-1 col-lg-10">
+				<h3 class="text-center"> Why do you need a cartoon pet? </h3>
+				<div class="row">
+					<div class="col-lg-6">
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus deserunt assumenda, tempora iste sint, libero optio sed veritatis repudiandae voluptatum est nulla, rerum at quasi id asperiores. Itaque, suscipit corporis.</p>
+
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus optio maxime, rem magnam nulla sint eveniet et commodi quo recusandae mollitia itaque adipisci illo, molestias maiores autem sed facilis praesentium.</p>
+					</div>
+
+					<div class="col-lg-6">
+
+						<img class="first-image" src="images/first-image.jpg" alt="">
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+		<br>
+	</div>
+
+	<div id="third">
+		<div class="row">
+			<div class="col-lg-offset-1 col-lg-10">
+				<h3 class="text-center"> Reasons for buying from our store </h3>
+				<div class="row">
+					<div class="col-lg-6">
+
+						<img class="first-image" src="http://cdn.skim.gs/images/r1fhw26smmcvqlvu0ku9/mulan-ending" alt="">
+					</div>
+
+					<div class="col-lg-6">
+						<ul class="reasons">
+							<li> Always with you </li>
+							<li> Cheer you up! </li>
+							<li> Have fun together </li>
+							<li> The better pet in the world </li>
+							<li> Make you REALLY happy! </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+
+	<div id="fourth" ng-controller="mainCtrl">
+		<div class="row">
+			<div class="col-lg-offset-1 col-lg-10">
+				<h3 class="text-center"> Our cartoon pets </h3>
+
+				<ul class="list-inline text-center">
+					<li> <input type="text" ng-model='search' class="form-control" placeholder="Find your friend!" size="40"> 
+					</li>
+					<li> <button class="btn bnt-default search-button"> <span class="glyphicon glyphicon-search"></span></button>
+					</li>
+
+					<br>
+
+					<li> <p> Total: {{data.length}}</p> </li>
+					<li> <p> By your search: {{(data | filter:{name:search}).length}}</p> </li>
+					
+				</ul>
+
+
+				<div class="row">
+
+
+						
+					
+							<div id='main' class="col-lg-6" ng-repeat='dat in data | filter: {name:search}'>
+								
+								<div class="pull-left" width="20%">
+									<img ng-src="{{dat.photo}}" class="pets-photo">
+									<br>
+									<br>
+									<button class="btn order" ng-click='ordered()'> Order {{dat.name}} </button>
+								</div>
+
+								<div class="pull-right" size="80%">
+									<h4> Info </h4>
+									<ul>
+										<li> Name: {{dat.name}} </li>
+										<li> Age: {{dat.age}} </li>
+										<li> Description: {{dat.description}} </li>
+										<li> Stars: {{dat.stars}} </li>
+									</ul>
+								</div>
+
+							</div>
+				</div>
+	
+			</div>
+		</div>
+		<br>
+	</div>
+
+	<div id="fifth" ng-controller="mainCtrl">
+		<div class="row">
+			<div class="col-lg-offset-1 col-lg-10">
+				<h3 class="text-center"> Photoes </h3>
+				<div class="row">
+					<div class="col-lg-offset-2 col-lg-8">
+						
+						<!-- слайдер -->
+					
+						<div class="carousel slide slider" data-ride="carousel" id="my-carousel">
+
+							<!-- точки снизу -->
+
+							<ol class="carousel-indicators">
+								<li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+								<li data-target="#my-carousel" ng-repeat="number in photoes" data-slide-to="{{number.id}}"></li>
+								
+
+							</ol> <!-- конец точек снизу -->
+
+
+							<!-- слайды, role - для браузера -->
+
+							<div class="carousel-inner" role="listbox" >
+								<div class="item active">
+									<img src="images/together/Dora.jpg" alt="">
+									<div class="carousel-caption">
+
+										<h1> Very nice </h1>
+									</div>
+								</div>
+
+								<div class="item" ng-repeat="phot in photoes">
+									<img ng-src="{{phot.photo}}" class="together-photo">
+									<div class="carousel-caption">
+											
+										<h1> {{phot.description}} </h1>
+									</div>	
+								</div>
+
+							</div> <!-- конец слайдов -->
+
+							
+
+							<!-- стрелки -->
+
+							<a href="#my-carousel" class="left carousel-control" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only"> Previous </span>
+							</a>
+
+							<a href="#my-carousel" class="right carousel-control" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only"> Next </span>
+							</a>
+							
+								<!-- конец стрелок -->
+
+						</div> <!-- конец сладера фул -->
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+	
+	<div id="sixth">
+		<div class="row">
+			<div class="col-lg-offset-1 col-lg-10 text-center">
+				<h3> Still thinking? </h3>
+				<button class="btn"> White to us! </button>
+			</div>
+		</div>
+		<br>
+	</div>
+
+
+	<div id="seventh" ng-controller="mainCtrl">
+		<div class="row">
+			<div class="col-lg-offset-1 col-lg-10">
+				<p> (c) 2016 </p>
+				<p class=""> All rights reserved </p>
+				<ul class="list-inline">
+					<li ng-mouseover="ordered()"> <a href="www.facebook.com"><img class="bottom-icon" src="images/icons/1.svg" alt=""> </a> </li>
+					<li><img class="bottom-icon" src="images/icons/2.svg" alt=""></li>
+					<li><img class="bottom-icon" src="images/icons/3.svg" alt=""></li>
+					<li><img class="bottom-icon" src="images/icons/4.svg" alt=""></li>
+					<li><img class="bottom-icon" src="images/icons/5.svg" alt=""></li>
+				</ul>
+			</div>
+		</div>
+		<br>
+	</div>
+
+
+	<a class="lol" href="#"><img title="Back to Top" src="https://d13yacurqjgara.cloudfront.net/assets/icon-backtotop-795f8ffd4ef0525a2fdb42adf6ab07dd.png" alt="Icon backtotop"></a>
+
+	
+	
+
+
+	
+
+	
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+#second, #third, #fourth, #fifth {
+	border-bottom: 2px solid rgba(237, 197, 129, 0.5); 
+}
+
+body {
+	background-color: rgb(238, 238, 238);
+}
+
+/* #second {
+	border: 2px dashed yellow;
+}
+
+.col-lg-10 {
+	border: 2px dashed red;
+}
+
+.col-lg-6 {
+	border: 2px dashed pink;
+}
+
+*/
+
+.reasons {
+	font-size: 20px;
+	text-decoration: underline;
+
+}
+
+.reasons > li {
+	margin: 10px; 
+}
+
+.col-lg-10 {
+	border: 2px dashed pink;
+}
+
+.first-image {
+	height: 100%; 
+	width: 100%;
+	border-radius: 3px;
+}
+
+#seventh {
+	background-color: #615F76;
+	color: #fff;
+}
+
+
+h3 {
+	color: #DCF42F;
+	font-weight: bold;
+}
+
+
+.order {
+	background-color: #F42FB2;
+	color: white;
+
+}
+
+
+.search-button {
+	background-color: #FEF952;
+	margin-left: -10px;
+}
+
+#main {
+	border: 1px solid orange;
+	height: 600px;
+}
+
+
+@font-face {
+    font-family: 'FFAD-Matro';
+    src: url('my-font.eot');
+    src: url('my-font.eot?#iefix') format('embedded-opentype'),
+         url('my-font.woff') format('woff'),
+         url('FFAD-Matro.ttf') format('truetype'),
+         url('tmy-font.svg#MyFont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+#lol {
+	font-family: 'FFAD-Matro';
+	color: purple;
+}
+
+.pets-photo {
+	height: 250px; 
+	width: 400px;
+	margin-top: 10px;
+	border-radius: 7px; 
+}
+
+together-photo {
+	height: 250px;
+	width: 400px;
+}
+
+slider {
+	height: 600px;
+	width: 300px;
+
+}
+
+
+
+
+::selection {
+    color: #FFF; 
+    background: #74BDB2;
+}
+
+
+#third, #fourth, #fifth, #sixth, #seventh {
+
+}
+
+.lol {
+	position: fixed;
+}
+
+.bottom-icon {
+	height: 32px;
+	width: 32px;
+}

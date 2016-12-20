@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<title> AngularJS </title>
+
+	
+	<link rel="stylesheet" type="text/css" href="add/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="icon" type="image/png" href="https://angular.io/resources/images/icons/favicon.ico">
+
+</head>
+<body>
+	<p> lll </p>
+	<div class='container' ng-controller='myCtrl'>
+		<div class="col-lg-10">
+			<table class='table table-bordered'>
+				<thead>
+					<th> Name </th>
+					<th> Age </th>					
+				</thead>
+				<tbody>
+					<tr ng-repeat='dates in data'>
+						<td>
+							{{dates.name}}
+						</td>
+						<td>
+							{{dates.age}}
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+
+			<p> Total: {{data.length}} string </p>
+
+			{{me}}
+
+			Your name: <br>
+
+			<input ng-model='input' type="text">
+			{{'Hi ' + input}} 
+			<button class='btn btn-danger' ng-click='dothis()'> Cool button </button>
+
+		</div>
+	</div>
+
+
+
+
+
+
+	<script src="add/jquery/jquery-2.2.0.js"></script>
+
+<!--	<script src="scripts/main.js"></script> -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+	<script src="scripts/angular.js"></script>
+
+	
+</body>
+</html>
